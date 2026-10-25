@@ -1,0 +1,20 @@
+{
+  "name": "tflite_micro",
+  "version": "1.0.0",
+  "description": "TensorFlow Lite for Microcontrollers (vendored copy). srcFilter excludes TFLM examples, kissfft (needs signal kernels we do not compile) and stock port files (debug_log/system_setup/micro_time) because better platform versions live in src/.",
+  "keywords": "tflm, machine-learning, inference",
+  "srcDir": ".",
+  "includeDir": ".",
+  "build": {
+    "srcFilter": [
+      "+<*>",
+      "-<examples/>",
+      "-<examples/*>",
+      "-<tensorflow/lite/micro/debug_log.cc>",
+      "-<tensorflow/lite/micro/system_setup.cc>",
+      "-<tensorflow/lite/micro/micro_time.cc>",
+      "-<third_party/kissfft/>",
+      "-<third_party/kissfft/*>"
+    ]
+  }
+}
